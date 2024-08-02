@@ -94,8 +94,17 @@ def torchcellar() :
             prnt("How will you aquire the treatment?\n1. Pay\n2. Beg\n3. Take\n")
             f1_1_1_1_2 = inpt("Please select 1, 2 or 3: ").strip()
             if f1_1_1_1_2 == '1' : 
-                prnt("You ignore the sword, pay the 8 gold, and take the healing potion.\n")
-                quit()
+                prnt(f"You ignore the sword, pay the 8 gold, and take the healing potion.\nYou pop the cork off the healing potion and down the liquid in one fluid action. You feel a slight burning in your belly as the magic potion does its work, but it tastes like cinnamon whiskey, so it’s not completely awful. The cleric drunkenly counts out the 8g in front of you. Spitefully, you tip her brand new mug of ale over, spilling the contents on her as you make your way out of the tavern. \nFeeling rejuvenated, and broke, you make your way back to the guild to report back to Miss Shin Giver. Upon arriving you find Miss Shin Giver waiting for you. {msg}There have been complaints about a creature in the sewer eating people's pets. Your assignment is to discover what the creature is and potentially where it resides, then report back to the guild. \n{msg}You do not have to engage. Here is a note with directions to the sewer entrance. \nFirst rats and now sewers? You came here to be an adventurer, not pest control! Maybe you can investigate a rumor you picked up while walking through the tavern. Some bandits just outside of town will be much more challenging.")
+                healed = choice("1 Get to work 2 Investigate the bandits")
+                if healed == '1':
+                   prnt("You head directly to the sewer entrance.\nThe sewer entrance is in the side of an outer city wall. The door opens to a black tunnel made of stone. Sewage water slowly flows down the center of the tunnel and comes to around 9 inches deep at the center. You light a torch and make your way into the tunnel. The smell is nauseating and you do your best to stay to the side of the tunnel, avoiding the sewage as much as possible. You come to a split in the tunnel and decide to investigate.  On the right path, you see scratch marks and dents in the tunnel structure. A creature with large claws could have made these marks. On the left path, the sewage seems to stand still. There may be a blockage further up the sewer.") 
+                   sewersplit = choice("1 Go right 2 Go left")
+                   if sewersplit == '1':
+                       assholebrokeright()
+                   else:
+                       assholebrokeleft()             
+                else:
+                    assholebandits()
             elif f1_1_1_1_2 == '2' : 
                 prnt('You ignore the sword, beg the cleric for mercy, and "accidentally" fall on her, smearing blood on her nice tunic.\n')
                 quit()
@@ -233,34 +242,12 @@ def afb1():
         prnt("With hopes of purchasing a cure for your ailment, you decide to make a stop at the local alchemist first.\nYou are still infected. The local alchemist is an eccentric gnome named Sir Mix Alott. After you give him a brief explanation of what happened, he claims to have the perfect tincture to completely cure you. The tincture would cost 10 gold pieces, which is currently all you have in your possession.")
         a = choice("1 Pay 2 Go without")
         if a == '1':
-            prnt(f"You pay the 10 gold and immediately drink the tincture. You make eye contact with Sir Mix Alott\n{titlef}If this doesn’t work, I’m going to beat my refund out of you! \nYou then head to the sewer entrance. \nThe sewer entrance is in the side of an outer city wall. The door opens to a black tunnel made of stone. Sewage water slowly flows down the center of the tunnel and comes to around 9 inches deep at the center. \nYou light a torch and make your way into the tunnel. The smell is nauseating and you do your best to stay to the side of the tunnel, avoiding the sewage as much as possible. \nYou come to a split in the tunnel and decide to investigate. \nOn the right path, you see scratch marks and dents in the tunnel structure. A creature with large claws could have made these marks. \nOn the left path, the sewage seems to stand still. There may be a blockage further up the sewer.")
+            prnt(f"You pay the 10 gold and immediately drink the tincture. You make eye contact with Sir Mix Alott\n{titlef}If this doesn’t work, I’m going to beat my refund out of you! \nYou head to the sewer entrance. \nThe sewer entrance is in the side of an outer city wall. The door opens to a black tunnel made of stone. Sewage water slowly flows down the center of the tunnel and comes to around 9 inches deep at the center. \nYou light a torch and make your way into the tunnel. The smell is nauseating and you do your best to stay to the side of the tunnel, avoiding the sewage as much as possible. \nYou come to a split in the tunnel and decide to investigate. \nOn the right path, you see scratch marks and dents in the tunnel structure. A creature with large claws could have made these marks. \nOn the left path, the sewage seems to stand still. There may be a blockage further up the sewer.")
             b = choice("1 Take the right path 2 Take the left path")
             if b =='1':
-                assholebroke1()
+                assholebrokeright()
             else:
-                prnt("You follow the path to the left. The blockage seems to be further up the tunnel that expected. You pass through several intersections before finally finding the source of the back up. \nA giant ooze, the exact dimensions of the sewer and roughly 2 meters thick, moves slowly in your directly. Sewage is backed up behind it and floating pieces of trash are visible in the gelatinous ooze. There is also a giant gem in the center of the creature that may require rescuing.")
-                c = choice("1 Attack 2 Report back 3 Go back and take the right path")
-                if c == '1':
-                    prnt(f"You draw your weapon and charge forward to attack the ooze. Your sword slices through the ooze with easy, but you appear to be doing minimal damage. \nCursed Blade: What are you doing? Kill it already! \nYou shove your sword and arm deep into the center of the dark green ooze, attempting to stab its central nerve system, if it has one. The ooze latches onto your arm, sucking you in. \n{titlef}Not today you jiggly bastard!\nWith superhuman might you pull your arm free of the gelatinous ooze. You activate the magic properties of your cursed blade. \nThe sword turns invisible and as you slice through the ooze, it begins to sizzle and burn away to nothingness. \nAfter a miserably long time spent slashing this monster into ooze puddles, you are victorious. You claim your prize, pocketing the giant gem.")
-                    d = choice("1 Report back 2 Go back and take the right patch")
-                    if d == "1":
-                        prnt(f"You make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the ooze creature is hiding. \n{msg} Thank you for your report but  you have failed the mission. An ooze wouldn’t come out of the sewers each night to steal animals for meals. It would simply go up and down the sewer. \nShe looks you up and down.\nPanicked that she may kick you out of the trials, you show Miss Shin Giver the giant gem that you collected from the Ooze. She inspects the gem and then turns back to you.\n{msg}This gem shows that while you technically failed the mission, you were able to bring value to the guild through your actions. If you give me the gem, you can stay in the trials. If you would prefer to keep the gem, you may leave. I will even tell you what the next mission is. \n{msg}This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it.\n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine.\n{msg}Here are directions to the cabin we would like you to investigate. Return here after you have cleared that cabin.")
-                        e = choice("1 Give her the gem and head to the cabin 2 Keep the gem")
-                        if e == '1':
-                            assholecabinbroke()
-                        else:
-                            prnt("You keep the gem and leave the barracks. You might not be an adventurer, but you have a giant gem that is going to earn you a ton of gold. \nCursed Blade: Good riddance to those GAG-ME suckers. Let’s kill some evil people on the way to the gem merchant! \nAnd you and your creepy, cursed sword lived happily ever.")
-                            theend()
-                    else:
-                        prnt("You go retrace your steps to the fork.")
-                        assholebroke1()
-                elif c == '2':
-                    prnt(f"You make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the ooze creature is hiding. \n{msg}Thank you for your report but you have failed the mission. An ooze wouldn’t come out of the sewers each night to steal animals for meals. It would simply go up and down the sewer. \nShe looks you up and down.\nYou are covered in sewer filth and smell awful. You are clearly not what the guild is looking for in a candidate. You are dismissed from the trials. You have failed.")
-                    theend()
-                else:
-                    prnt("You go retrace your steps to the fork.")
-                    assholebroke1()
-                
+                assholebrokeleft()    
         else:
             prnt("You head to the sewer without treatment.\nThe sewer entrance is in the side of an outer city wall. The door opens to a black tunnel made of stone. Sewage water slowly flows down the center of the tunnel and comes to around 9 inches deep at the center. \nYou light a torch and make your way into the tunnel. The smell is nauseating and you do your best to stay to the side of the tunnel, avoiding the sewage as much as possible. \nYou come to a split in the tunnel and decide to investigate. \nOn the right path, you see scratch marks and dents in the tunnel structure. A creature with large claws could have made these marks. On the left path, the sewage seems to stand still. There may be a blockage further up the sewer.")
             assholepoisoned()
@@ -327,7 +314,7 @@ def assholebandits():
         else:
             prnt("You wait until nightfall. Your cursed sword tells you when the bandits, including the one on watch, have all fallen asleep. \nYou make your way to the leader’s tent where you easily dispatch him while he sleeps. Quietly, you sneak out of the bandit camp and head back to the city of Cheddar.\nYou bring the guards to the bandit camp where you assist in the arrest of the bandits. You are paid a bounty of 100 gold for slaying the bandit leader and assisting in the arrest.\nCursed Blade: Being a bounty hunter is way easier and more profitable than being an adventurer. Let’s do this instead. \nRemembering that the Global Adventurer’s Guild requested that you go search through a piss filled sewer, you decide to listen to the sword and collect a second bounty from the city guard. \nAnd so began your wonderful career in bounty hunting.")
             theend()
-def assholebroke1():
+def assholebrokeright():
     prnt("You follow the path to the right. Long thick strands of webbing begin to appear in the sewer tunnel as you make your way toward what appears to be a monster’s nest. \nAs you round a corner, a giant phase spider comes into view. It is currently feeding on something.")
     a = choice("1 Attack 2 Report back")
     if a == '1':
@@ -335,6 +322,29 @@ def assholebroke1():
     else:
         prnt(f"You make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the nest of the phase spider can be found and and let her know that you killed the creature. he dismisses you to get some rest.\nThe next day, you wake and report to Miss Shin Giver. \n{msg}This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it. \n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine.\n{msg}Here are directions to the cabin we would like you to investigate. Return here after you have cleared that cabin.")
         assholecabinbroke()
+def assholebrokeleft():
+    prnt("You follow the path to the left. The blockage seems to be further up the tunnel that expected. You pass through several intersections before finally finding the source of the back up. \nA giant ooze, the exact dimensions of the sewer and roughly 2 meters thick, moves slowly in your directly. Sewage is backed up behind it and floating pieces of trash are visible in the gelatinous ooze. There is also a giant gem in the center of the creature that may require rescuing.")
+    c = choice("1 Attack 2 Report back 3 Go back and take the right path")
+    if c == '1':
+        prnt(f"You draw your weapon and charge forward to attack the ooze. Your sword slices through the ooze with easy, but you appear to be doing minimal damage. \nCursed Blade: What are you doing? Kill it already! \nYou shove your sword and arm deep into the center of the dark green ooze, attempting to stab its central nerve system, if it has one. The ooze latches onto your arm, sucking you in. \n{titlef}Not today you jiggly bastard!\nWith superhuman might you pull your arm free of the gelatinous ooze. You activate the magic properties of your cursed blade. \nThe sword turns invisible and as you slice through the ooze, it begins to sizzle and burn away to nothingness. \nAfter a miserably long time spent slashing this monster into ooze puddles, you are victorious. You claim your prize, pocketing the giant gem.")
+        d = choice("1 Report back 2 Go back and take the right patch")
+        if d == "1":
+            prnt(f"You make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the ooze creature is hiding. \n{msg} Thank you for your report but  you have failed the mission. An ooze wouldn’t come out of the sewers each night to steal animals for meals. It would simply go up and down the sewer. \nShe looks you up and down.\nPanicked that she may kick you out of the trials, you show Miss Shin Giver the giant gem that you collected from the Ooze. She inspects the gem and then turns back to you.\n{msg}This gem shows that while you technically failed the mission, you were able to bring value to the guild through your actions. If you give me the gem, you can stay in the trials. If you would prefer to keep the gem, you may leave. I will even tell you what the next mission is. \n{msg}This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it.\n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine.\n{msg}Here are directions to the cabin we would like you to investigate. Return here after you have cleared that cabin.")
+            e = choice("1 Give her the gem and head to the cabin 2 Keep the gem")
+            if e == '1':
+                assholecabinbroke()
+            else:
+                prnt("You keep the gem and leave the barracks. You might not be an adventurer, but you have a giant gem that is going to earn you a ton of gold. \nCursed Blade: Good riddance to those GAG-ME suckers. Let’s kill some evil people on the way to the gem merchant! \nAnd you and your creepy, cursed sword lived happily ever.")
+                theend()
+        else:
+            prnt("You go retrace your steps to the fork.")
+            assholebrokeright()
+    elif c == '2':
+        prnt(f"You make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the ooze creature is hiding. \n{msg}Thank you for your report but you have failed the mission. An ooze wouldn’t come out of the sewers each night to steal animals for meals. It would simply go up and down the sewer. \nShe looks you up and down.\nYou are covered in sewer filth and smell awful. You are clearly not what the guild is looking for in a candidate. You are dismissed from the trials. You have failed.")
+        theend()
+    else:
+        prnt("You go retrace your steps to the fork.")
+        assholebrokeright()
 def assholebroke1a():
     prnt("You draw your weapon and charge forward to attack the spider. Your first attack strikes true and your sword buries itself deep into the spider’s abdomen. Unfortunately, it is not enough to kill the spider. The monstrosity turns quickly and leaps at you. \nYou dive to the side, dodging the attack from the creature. You roll into a defensive stance and prepare to attack. Your next attack cripples one of the spider’s front legs, causing it to stumble and screech in pain. \nThe spider recovers quickly and leaps at you a second time, spitting its venom as it closes in. You dodge to your left, swinging your blade down into the creature’s head just as it lands. \nThe spider dies as it collapses to the ground next to you. \nAnother mission is complete. You head back to the guild to report your success.")
     prnt(f"You make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the phase spider can be found and let her know you killed the creature. She congratulates you on your success and gives you your next mission. \n{msg}This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it. \n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine.\n{msg}Here are directions to the cabin we would like you to investigate. Return here after you have cleared that cabin.")
@@ -894,5 +904,3 @@ titler = (f"{name.capitalize()} the Clever: ")
 msg = "Miss Shin Giver: "
 pd = "Pan Dora: "
 beginning()
-
-
