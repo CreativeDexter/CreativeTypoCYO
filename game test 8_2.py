@@ -106,11 +106,11 @@ def torchcellar() :
                 else:
                     assholebandits()
             elif f1_1_1_1_2 == '2' : 
-                prnt('You ignore the sword, beg the cleric for mercy, and "accidentally" fall on her, smearing blood on her nice tunic.\n')
-                quit()
+                prnt('You ignore the sword, beg the cleric for mercy, and "accidentally" fall on her, smearing blood on her nice tunic.\n Cleric: Get off me! \nShe shoves you to the floor. Her one healing potion falls out of her pocket and smashes on the ground. The cleric mutters something about paying for that just before she strikes you on the head with her mug. \nYou fall unconscious.You awake in the city prison. The guard tells you that you were arrested for assaulting a healer’s guild member. With no way to attain healing, the infection spreads throughout your body during the night. \nYou die.')
+                theend()
             elif f1_1_1_1_2 == '3' : 
                 prnt("The sword hasn't led you wrong yet. You draw your sword and stab the cleric in the chest.\n")
-                quit()
+                aholemurderer()
     elif f1_1_1 == '2' :
         prnt("You swing your sword at the creature.\nYour first strike hits home and the rat cries out in pain.\nThe creature attempts to bite your sword arm, but your armor absorbs the blow.\nA second blow from your sword glances off the shoulder of the creature.\nThe rat lunges for your right leg, but you bring your sword blade down through the creatures neck. It drops to the ground lifeless. \nYou clean your blade and quickly survey the rest of the cellar. After a moment, you are certain that the threat has been eliminated.\n")
         prnt("With your foe vanquised what will you do?\n1. Report to GAG-ME\n2. Ask your sword's advice\n")
@@ -122,10 +122,10 @@ def torchcellar() :
             f1_1_1_2_1 = inpt("Please select option 1 or 2: ").strip()
             if f1_1_1_2_1 == '1' :
                 prnt("You head directly to the sewer entrance.\n")
-                quit()
+                healthyassholesewer()
             elif f1_1_1_2_1 == '1' :
                 prnt("With 15 gold pieces in your coin purse, you decide to stop by the market before heading to the sewer entrance. Let's see what 15GP will get you!\n")
-                quit()
+                healthyassholeshopping()
         elif f1_1_1_2 == '2' :
             prnt("You consult your cursed sword and inquire about what you should do next.\nMaroon wisps of magic energy dance across the face of the blade. You speak outloud to the sword while explaining what happened and asking it what to do next.\nCursed Blade: This mission was too easy. If we really want to stand out at exemplary adventurers, we need to go above and beyond the standard mission. \nCursed Blade: I believe I sensed some scoundrels outside in the alley just a could blocks down. Let's go teach them a lesson before we head back to the guild!")
             prnt("How will you proceed?\n1. Ignore the sword\n2. Take the advice\n")
@@ -370,9 +370,192 @@ def assholecabinbroke():
         else:
             prnt("You attempt to sneak through the window. You slowly open it, ducking back down every time the window makes a creaking noise. The process is painfully slow and the window is incredible noisy, but Pan Dora the witch does not seem to notice. \nOnce the window is open wide enough for you to crawl through, you hoist yourself through the window and roll into the cabin. Quickly, you lift your head back up to check on the location of the witch.\nPan Dora is no longer at the fire. While you were rolling into the cabin, she must have moved. You scan the room quickly to find her. Halfway through the scan, a monkey jumps at you and begins biting at your sword arm.\nYou try to shake the monkey free, but it holds tight with its hand while it begins to kick you with its booted feet. Pan Dora begins to cast a spell.\nPan Dora: Do you think you’re a rogue or something? I heard you opening that window the whole time. Now you pay the price!\nPain surges through your body as Pan Dora finishes casting her spell. You fall to the ground as she lets out a hideous cackle.\nYou die.")
             theend()
+def aholemurderer():
+    prnt("The sword runs the cleric through. You quickly snatch up the potion and drink it. The healing properties activate immediately and you feel better than ever. \nShouts from other patrons fill the bar. The barkeep shouts for someone to get the city guard. It's time for you to go.")
+    a = choice("1 Go to the guild 2 Hide out")
+    if a == '1':
+        prnt("You head back to the guild to report back to Miss Shin Giver.You make it back to the guild and report back to Miss Shin Giver. She says to get some rest and report back to her in the morning for your next mission. \nYou awake in the middle of the night to a knock on your door. \nFrustrated that someone would dare interrupt your sleep, you jump out of bed and make your way to the door. Upon opening the door, six members of the city guard barrel into your room. They throw you in handcuffs and inform you that you're arrested for murder. \nYou have chosen poorly. The city guard arrests you and you are executed for your crimes.")
+        theend()
+    else:
+        prnt("The guild probably isn't safe anymore. You search for someplace safer to stay. You make your way out of the tavern and start down the street. Just then, a man comes out from the shadows. \nStrange Man: I saw what you did in there. That cleric had it coming. Say…why don’t you join up with me and my boys. You may have heard of us. We are the Googly Eye Gang.")
+        b = choice("1 Join 2 Decline")
+        if b == '1':
+            prnt("The gang looks like a ragtag bunch of hooligans, but you could see yourself as a top dog amongst their ranks. You ask your sword for advice \nCursed Blade: It felt good to stab that evil cleric. Think of how much more evil we could slay! We could slay all the clerics. \nAgain, the sword is making a lot of sense. You join the gang. \nWithin weeks, you climb to the rank of second in charge of the gang. The Googly Eye Gang becomes infamous within the city of Cheddar. You even get to take out a few Global Adventurers that get in the way. \nYour sword was right. The life of crime is the life for you.")
+            theend()
+        else:
+            prnt(f"The gang looks like a ragtag bunch of hooligans, but you could see yourself as a top dog amongst their ranks. You ask your sword for advice. \nCursed Blade: Well, we can’t go back to the GAG-ME barracks now. We might as well lead this gang instead. Stab the leader and let’s be in charge. \nAgain, the sword is making a lot of sense. You draw the sword and stab the leader through the heart. You stare down the other gang members. \n{titlef}I’m in charge now. Does anyone have a problem with that? \nThey all motion compliance and then take you back to the gang’s hideout. \nThe Googly Eye Gang becomes infamous within the city of Cheddar. You even get to take out a few Global Adventurers that get in the way. Your sword was right. The life of crime is the life for you.")
+            theend()
+def healthyassholesewer():
+    prnt("The sewer entrance is in the side of an outer city wall. The door opens to a black tunnel made of stone. Sewage water slowly flows down the center of the tunnel and comes to around 9 inches deep at the center. \nYou light a torch and make your way into the tunnel. The smell is nauseating and you do your best to stay to the side of the tunnel, avoiding the sewage as much as possible. \nYou come to a split in the tunnel and decide to investigate. \nOn the right path, you see scratch marks and dents in the tunnel structure. A creature with large claws could have made these marks. \nOn the left path, the sewage seems to stand still. There may be a blockage further up the sewer.")
+    a = choice("1 Go right 2 Go left")
+    if a == '1':
+        prnt("You follow the path to the right. Long thick strands of webbing begin to appear in the sewer tunnel as you make your way toward what appears to be a monster’s nest. \nAs you round a corner, a giant phase spider comes into view. It is currently feeding on something.")
+        b = choice("1 Attack 2 Report back")
+        if b =='1':
+            prnt("You draw your weapon and charge forward to attack the spider. Your first attack strikes true and your sword buries itself deep into the spider’s abdomen. Unfortunately, it is not enough to kill the spider. The monstrosity turns quickly and leaps at you. \nYou dive to the side, dodging the attack from the creature. You roll into a defensive stance and prepare to attack. Your next attack cripples one of the spider’s front legs, causing it to stumble and screech in pain. \nThe spider recovers quickly and leaps at you a second time, spitting its venom as it closes in. You dodge to your left, swinging your blade down into the creature’s head just as it lands. \nThe spider dies as it collapses to the ground next to you.")
+            c = choice("1 Report back 2 Consult sword")
+            if c == '1':
+                prnt(f"You make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the phase spider can be found and let her know you killed the creature. She congratulates you on your success and gives you your next mission. \n{msg}This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it. \n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine.\n{msg}Here are directions to the cabin we would like you to investigate. Return here after you have cleared that cabin.")
+                assholecabinbroke()
+            else:
+                prnt("The Global Adventurer’s Guild is starting to sound more like the Global Lame Guild. You ask your sword if you should really go to the cabin or if there is something else you should do. \nCursed Blade: There won’t be much to kill in an empty cabin. We need to destroy some evil people! Let’s get those bandits we heard about that are hiding in the woods. I bet we could kill them and rid the world of more evil!")
+                d = choice("1 Ignore the sword 2 Take the advice")
+                if d =='1':
+                    assholecabinbroke()
+                else:
+                    assholebandits()
+        else:
+            prnt("You make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the nest of the phase spider can be found and she dismisses you to get some rest. \nThe next day, you wake and report to Miss Shin Giver. \n{msg}This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it. \n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. \n{msg}We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine. \n{msg}Here are directions to the cabin we would like you to investigate. Return here after you have cleared that cabin.")
+            d = choice("1 Get to work 2 Consult sword")
+            if d == '1':
+                assholecabinbroke()
+            else:
+                prnt("The Global Adventurer’s Guild is starting to sound more like the Global Lame Guild. You ask your sword if you should really go to the cabin or if there is something else you should do. \nCursed Blade: There won’t be much to kill in an empty cabin. We need to destroy some evil people! Let’s get those bandits we heard about that are hiding in the woods. I bet we could kill them and rid the world of more evil!")
+                d = choice("1 Ignore the sword 2 Take the advice")
+                if d =='1':
+                    assholecabinbroke()
+                else:
+                    assholebandits()
+    else:
+        assholebrokeleft()
+    
+def healthyassholeshopping():
+    prnt("The market is bustling, but there are only two stores that you are interested in. \nThe alchemist has healing potions on display for 10 gold each. You are certain you could negotiate 2 healing potions for 15 gold. \nThe tinker has some cool new items and one catches your attention. A pair of dark vision goggles has a price tag of 15 gold pieces on them. \nIt would take all your money, but it would come in handy for the next mission.")
+    a = choice("1 Buy the poitions 2 Buy the goggles")
+    if a == '1':
+        prnt(f"You purchase the two potions and place them in your inventory. They could come in handy later. {titlef}These better taste good or you'll be wishing that you never met me! \nYou make your way to the sewer entrance. The sewer entrance is in the side of an outer city wall. The door opens to a black tunnel made of stone. \nSewage water slowly flows down the center of the tunnel and comes to around 9 inches deep at the center. \nYou light a torch and make your way into the tunnel. The smell is nauseating and you do your best to stay to the side of the tunnel, avoiding the sewage as much as possible. \nYou come to a split in the tunnel and decide to investigate. \nOn the right path, you see scratch marks and dents in the tunnel structure. A creature with large claws could have made these marks. \nOn the left path, the sewage seems to stand still. There may be a blockage further up the sewer.")
+        b = choice("1 Go right 2 Go left")
+        if b =='1':
+            twopotionsright()
+        else:
+            prnt(f"You follow the path to the left. The blockage seems to be further up the tunnel that expected. You pass through several intersections before finally finding the source of the back up. You still have two potions in your pack. \nA giant ooze, the exact dimensions of the sewer and roughly 2 meters thick, moves slowly in your directly. Sewage is backed up behind it and floating pieces of trash are visible in the gelatinous ooze. \nThere is also a giant gem in the center of the creature that may require rescuing.")
+            c = choice("1 Attack 2 Report back 3 go back to the other path")
+            if c == '1':
+                prnt(f"You draw your weapon and charge forward to attack the ooze. Your sword slices through the ooze with easy, but you appear to be doing minimal damage. \nCursed Blade: What are you doing? Kill it already!\nYou shove your sword and arm deep into the center of the dark green ooze, attempting to stab its central nerve system, if it has one. The ooze latches onto your arm, sucking you in. \n{titlef}Not today you jiggly bastard! \nYou pull your arm free of the gelatinous ooze. \nYou shout in anger and pain as you activate the magic properties of your cursed blade. The sword turns invisible and as you slice through the ooze, it begins to sizzle and burn away to nothingness.  \nAfter a miserably long time spent slashing this monster into ooze puddles, you are victorious. You claim your prize, pocketing the giant gem.")
+                d = choice("1 Report back 2 Check the other path")
+                if d == '1':
+                    prnt(f"With two potions and the gem, you make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the ooze creature is hiding. \n{msg} Thank you for your report but  you have failed the mission. An ooze wouldn’t come out of the sewers each night to steal animals for meals. \n{msg}It would simply go up and down the sewer. \nShe looks you up and down. Panicked that she may kick you out of the trials, you show Miss Shin Giver the giant gem that you collected from the Ooze. \nShe inspects the gem and then turns back to you. \n{msg}This gem shows that while you technically failed the mission, you were able to bring value to the guild through your actions. If you give me the gem, you can stay in the trials. If you would prefer to keep the gem, you may leave. I will even tell you what the next mission is. \n{msg}This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it. \n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine. \n{msg}Here are directions to the cabin we would like you to investigate. Return here after you have cleared that cabin.")
+                    e = choice("1 Give the gem 2 Keep the gem")
+                    if e == '1':
+                        prnt(f"You give Miss Shin Giver the gem and head out to complete the last mission of your initiation. As you head out of Miss Shin Giver's office, you see one of the other recruits looking sickly and wounded. You may be an asshole, but you're not heartless. You pull one of the potions from your pack and give it to him. He promises you a favor later; should you both succeed in the trials")
+                        onepotioncabin()
+                    else:
+                        prnt(f"You You keep the gem and leave the barracks. You might not be an adventurer, but you have a giant gem that is going to earn you a ton of gold. Good riddance to those GAG-ME suckers. \nCursed Blade: Let’s kill some evil people on the way to the gem merchant! \nAnd you and your creepy, cursed sword lived happily ever.")
+                        theend()
+                else:
+                    twopotionsright()
+            elif c == '2':
+                prnt(f"You make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the ooze creature is hiding. \n{msg} Thank you for your report but you have failed the mission. An ooze wouldn’t come out of the sewers each night to steal animals for meals. It would simply go up and down the sewer. \nShe looks you up and down. \nYou are covered in sewer filth and smell awful. You are clearly not what the guild is looking for in a candidate. You are dismissed from the trials. You have failed.")
+                theend()
+            else:
+                twopotionsright()
+    else:
+        prnt(f"You purchase the dark vision goggles and place them on your head. \n{titlef}Do these make me look sexy? And if the answer isn't a resounding yes, I'm going to throat punch you. \nThe tinkerer nods quickly and then you make your way to the sewer entrance. The sewer entrance is in the side of an outer city wall. The door opens to a black tunnel made of stone. Sewage water slowly flows down the center of the tunnel and comes to around 9 inches deep at the center. \nThe goggles are already coming in handy! You pull them down over your eyes and find that you can see perfectly in the dark sewage tunnels. \nThe smell is nauseating and you do your best to stay to the side of the tunnel, avoiding the sewage as much as possible. \nYou come to a split in the tunnel and decide to investigate. On the right path, you see scratch marks and dents in the tunnel structure. A creature with large claws could have made these marks. \nOn the left path, the sewage seems to stand still. There may be a blockage further up the sewer.")
+        b = choice("1 Go right 2 Go left")
+        if b == '1':
+            darkgogr()
+        else:
+            darkgogl()
 
+def darkgogr():
+    prnt(f"With your darkvision goggles on, you follow the path to the right. Long thick strands of webbing begin to appear in the sewer tunnel as you make your way toward what appears to be a monster’s nest. \nAs you round a corner, a giant phase spider comes into view. It is currently feeding on something.\nThe darkvision goggles illuminate the whole nest. The spider does not notice you as you slowly approach for a closer look.")
+    a = choice("1 Attack 2 Report back")
+    if a == '1':
+        prnt("Your darkvision goggles make sneaking up toward the spider incredibly easy. Unfortunately, you’re no rogue. Just as soon as you are within arms reach, the spider turns!  \nYou swing your sword, but the attack misses the spider’s head and sinks into its shoulder. It cries out in pain as your sword slices through the top of its front leg. \nIt reels back, but you press the attack, slicing off a second and third leg. It teeters, ichor bleeding in several directions. You thrust your magic sword forward and into the spider’s head. The creature falls to the ground dead. \nAnother mission is complete.")
+        prnt(f"Darkvision goggles still equipped, you head back to the barracks. You make it back to the guild safely and report your findings to Miss Shin Giver. \nYou tell her exactly where the nest of the phase spider can be found and let her know that you killed the creature. She congratulates you on your success and gives you your next mission. \n{msg}This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it.\n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine. \n{msg}Here are directions to the cabin we would like you to investigate. Return here after you have cleared that cabin.")
+        darkgogcabin()
+    else: 
+        prnt(f"Darkvision goggles still equipped, you head back to the barracks. You make it back to the guild safely and report your findings to Miss Shin Giver. \nYou tell her exactly where the nest of the phase spider can be found. She congratulates you on your success and gives you your next mission. \n{msg}This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it.\n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine. \n{msg}Here are directions to the cabin we would like you to investigate. Return here after you have cleared that cabin.")
+        darkgogcabin()
+        
+def darkgogl():
+    prnt(f"With your darkvision goggles on, you follow the path to the left. The blockage seems to be further up the tunnel that expected. You pass through several intersections before finally finding the source of the back up. \nA giant ooze, the exact dimensions of the sewer and roughly 2 meters thick, moves slowly in your directly. Sewage is backed up behind it and floating pieces of trash are visible in the gelatinous ooze. \nThere is also a giant gem in the center of the creature that may require rescuing.")
+    a = choice("1 Attack 2 Report back")
+    if a == 1:
+        prnt(f"With your darkvision goggles on, you draw your weapon and charge forward to attack the ooze. Your sword slices through the ooze with easy, but you appear to be doing minimal damage. \nCursed Blade: What are you doing? Kill it already! \nYou goggles show you exactly where the creature's ooze barrier begins and you avoid it touching your flesh. Seeing your blade is doing minimal damage, you activate the magic properties of your cursed blade. \nThe sword turns invisible and as you slice through the ooze, it begins to sizzle and burn away to nothingness. \nAfter a miserably long time spent slashing this monster into ooze puddles, you are victorious. You claim your prize, pocketing the giant gem. \nAnother mission is complete. Do you want to go back to the barracks or check the other tunnel?")
+        b = choice("1 Report back 2 Check the other tunnel")
+        if b == '1':
+            prnt(f"You make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the ooze creature is hiding. \{msg} Thank you for your report but  you have failed the mission. An ooze wouldn’t come out of the sewers each night to steal animals for meals. It would simply go up and down the sewer. \nShe looks you up and down. \nPanicked that she may kick you out of the trials, you show Miss Shin Giver the giant gem that you collected from the Ooze. She inspects the gem and then turns back to you.\n{msg}This gem shows that while you technically failed the mission, you were able to bring value to the guild through your actions. If you give me the gem, you can stay in the trials. If you would prefer to keep the gem, you may leave. I will even tell you what the next mission is.\n{msg}This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it.\n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine. \n{msg}Here are directions to the cabin we would like you to investigate. Return here after you have cleared that cabin.")
+            c = choice("1 Give the gem 2 Keep the gem")
+            if c == '1':
+                prnt("You give Miss Shin Giver the gem and head to complete your initiation.")
+                darkgogcabin()
+            else:
+                prnt("You keep the gem and leave the barracks. You might not be an adventurer, but you have a giant gem that is going to earn you a ton of gold. \nCursed Blade: Good riddance to those GAG-ME suckers. Let’s kill some evil people on the way to the gem merchant!\nAnd you and your creepy, cursed sword lived happily ever.")
+                theend()
+        else:
+            darkgogr()
+    else:
+        prnt(f"With your darkvision goggle still equipped, you make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the ooze creature is hiding. \n{msg}Thank you for your report but you have failed the mission. An ooze wouldn’t come out of the sewers each night to steal animals for meals. It would simply go up and down the sewer. \nShe looks you up and down. \n{msg}Even though you failed the mission, it looks as if you were able to find a treasure along the way. This treasure shows that you were able to bring value to the guild through your actions. If you give me those magic goggles, you can stay in the trials. If you would prefer to keep the goggles, you may leave. Before you make this decisions, I will even tell you what the next mission is going to be. \n{msg}This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it.\n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine. \n{msg}Here are directions to the cabin we would like you to investigate. ")
+        c = choice("1 Give the goggles 2 Keep the goggles")
+        if c == '1':
+            prnt("You give her the goggles and head out to finish your initiation.")
+            assholecabinbroke()
+        else:
+            prnt("You keep the goggles and leave the barracks. You might not be an adventurer, but you have a sweet magic item now and you're sure you can use this to make your fortune another way. \nCursed Blade: Good riddance to those GAG-ME suckers. Let’s kill some evil people on the way to the inn! And you and your creepy, cursed sword lived happily ever.")
+            theend()
 
+def darkgogcabin():
+    prnt(f"With your darkvisions goggles on, you leave the city of Cheddar and follow the directions to the cabin. \nIt is dark and eerie outside when you arrive at the cabin, but you are feeling healthy and confident in your assignment. \nAs you draw nearer, you see smoke coming from the chimney. Of course there had to be someone here. You approach the cabin. \nIf life has taught you anything, the element of surprise is a huge advantage, but it’s also smart to be safe sometimes. You could either kick the door in and start swinging, or try to peek through the window to see what’s happening inside.")
+    a = choice("1 Kick the door in 2 Peek in the window")
+    if a =='1':
+       darkgogkick()
+    else:
+        prnt("You peek in the window and see Pan Dora stirring a pot of something you hope to be stew. On the table, there is a small box with magic rune work inscribed on the sides you can see; Pan Dora's Box. \nIt appears there are only two ways into this cabin. One through the front door for a full on attack, or you can try to be sneaky and crawl through the window. \nYou're not certain if your goggles are going to be of any assistance to you once you're inside, but they're incredibly handy for sneaking around the cabin.")
+        b = choice("1 Kick the door in 2 Sneak through the window")
+        if b == '1':
+            darkgogkick()
+        else :
+            prnt(f"You attempt to sneak through the window. You slowly open it, ducking back down every time the window makes a creaking noise. The process is painfully slow and the window is incredible noisy, but Pan Dora the witch does not seem to notice. \nOnce the window is open wide enough for you to crawl through, you hoist yourself through the window and roll into the cabin. Quickly, you lift your head back up to check on the location of the witch.\nPan Dora is no longer at the fire. While you were rolling into the cabin, she must have moved. You scan the room quickly to find her. \nHalfway through the scan, a monkey jumps at you and begins biting at your sword arm.\nYou try to shake the monkey free, but it holds tight with its hand while it begins to kick you with its booted feet. Pan Dora begins to cast a spell.\n{pd}Do you think you’re a rogue or something? I heard you opening that window the whole time. Now you pay the price!\nPain surges through your body as Pan Dora finishes casting her spell. You fall to the ground as she lets out a hideous cackle.")
+            theend()
+def darkgogkick():
+    prnt("You kick the door with all your might and then charge into the small cabin. Your darkvision goggles do not help in this lighting. \nPan Dora the witch stands momentarily stunned by the fireplace. Just as you close the distance to the witch, a monkey jumps at you and begins biting at your sword arm. \nYou try to shake the monkey free, but it holds tight with its hand while it begins to kick you with its booted feet. Pan Dora begins to cast a spell. \nOn the table, there is a small box with magic rune work inscribed on the sides you can see; Pan Dora's Box. That box holds great magic, but Pan Dora is currently casting a spell.")
+    b = choice("1 Attack 2 Grab the box")
+    if b =='1':
+        prnt("You ignore Pan Dora’s Box and go for the witch.\nYou cannot let her finish casting that spell, so with a thought, you activate the magic properties of the sword and charge forward. The monkey does not release you, but you can deal with the pain as you move forward to attack. \nInvisible blade in hand, you thrust forward, landing a deadly blow to the witch’s stomach. Pan Dora falls to the ground, but not before finishing her incantation. \nYou magic goggles shows you where the magic energy from Pan Dora is targeting. A beam of energy shoots from Pan Dora’s hand toward you. Without hesitation, you bring your arm up and use the boot wearing monkey to block the blast. The monkey immediately releases your arm and falls to the ground. \nYou make your way toward the table to collect the box just as the monkey collects itself and escapes through the kicked in door. \nPan Dora dies. \nThe monkey with boots escapes. \nYou collect Pan Dora’s Box and head back to the guild to report your success.")
+        win()
+    else:
+        prnt(f"You ignore Pan Dora and go for the box.\nThe boot wearing monkey is more of a pest that you had thought. It reaches up and pulls your goggles to the side, impairing your vision. Pan Dora fires an energy beam spell at you, but it misses. \n{pd}Don’t touch that! \nYou grab Pan Dora’s Box and activate the runes on the side. \nThe monkey lets out a scream. The box begins to vibrate and shoot violet light out from the runes. \n{pd}Well shit. \nAnd the cabin explodes.")
+        theend()
 
+def twopotionsright():
+    prnt("You follow the path to the right. Long thick strands of webbing begin to appear in the sewer tunnel as you make your way toward what appears to be a monster’s nest.You still have two potions in your pack. As you round a corner, a giant phase spider comes into view. It is currently feeding on something.\n")
+    a = choice("1 Attack 2 Report back")
+    if a == '1':
+        prnt("You draw your weapon and charge forward to attack the spider. Your first attack strikes true and your sword buries itself deep into the spider’s abdomen. Unfortunately, it is not enough to kill the spider. The monstrosity turns quickly and leaps at you. \nYou dive to the side, dodging the attack from the creature. You roll into a defensive stance and prepare to attack. Your next attack cripples one of the spider’s front legs, causing it to stumble and screech in pain. \nThe spider recovers quickly and leaps at you a second time, spitting its venom as it closes in. You are able to skillfully slide to your butt, dodging the venom, but the spider lands just above you and bites down on your leg. \nThe pain from the bite is excruciating, but you find the opportunity you were hoping for and thrust your sword forward, ramming the steel into the spider’s head. \nThe spider dies as it collapses to the ground next to you. \nYou look over your wound. It is nasty, but you could walk on it if you needed to. You remember you have that healing potion in your bag as well.")
+        b = choice("1 Drink a potion 2 Report back")
+        if b == '1':
+            prnt(f"You drink one of the potions from your pack and head back to the barracks. \nYou make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the nest of the phase spider can be found and let her know that you killed the creature. She congratulates you on your success and gives you your next mission. \n{msg}This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it. \n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine. \n{msg}Here are directions to the cabin we would like you to investigate. Return here after you have cleared that cabin.")
+            onepotioncabin()
+        else:
+            prnt("You attempt to return to the barracks, but the venom from the spider sets in much more quickly than you had originally determined. You attempt to retrieve a potion from your pack, but your arms go numb. \nYou collapse in the sewer as the poison paralyzes your body. You drown in the sewage.")
+            theend()
+    else:
+        prnt("With two potions still in hand, you make it back to the guild safely and report your findings to Miss Shin Giver. You tell her exactly where the nest of the phase spider can be found and she dismisses you to get some rest. \nThe next day, you wake and report to Miss Shin Giver. \n{msg} This will be your final mission to attain admittance into the guild as a full member. Most of what we do here at the guild is finding and collecting magic items. It appears that one such item has come into close proximity of Cheddar and we have been tasked to collect it. \n{msg}A woman that goes by the name Pan Dora recently stole an item from the Collective and has hidden away to a secret cabin in the woods west of Cheddar. We wouldn’t normally ask a new recruit to assist in such a case, but this is an all hands on deck scenario. There are over 500 cabins in the woods, so the chance of you actually finding her is 1 in 500. So you should be fine. \n{msg}Here are directions to the cabin we would like you to investigate. Return here after you have cleared that cabin. \nAs you head out of Miss Shin Giver's office, you see one of the other recruits looking sickly and wounded. You may be an asshole, but you're not heartless. You pull one of the potions from your pack and give it to him. He promises you a favor later; should you both succeed in the trials.")
+        onepotioncabin()
+
+def onepotioncabin():
+    prnt("With one remaining healing potion, you leave the city of Cheddar and follow the directions to the cabin. \nIt is dark and eerie outside when you arrive at the cabin, but you are feeling healthy and confident in your assignment. \nAs you draw nearer, you see smoke coming from the chimney. Of course there had to be someone here. You approach the cabin. \nIf life has taught you anything, the element of surprise is a huge advantage, but it’s also smart to be safe sometimes. You could either kick the door in and start swinging, or try to peek through the window to see what’s happening inside.")
+    a = choice("1 Kick the door in 2 Peek in the window")
+    if a == '1':
+        onepotcabinkick()
+    else:
+        prnt("You peek in the window and see Pan Dora stirring a pot of something you hope to be stew. On the table, there is a small box with magic rune work inscribed on the sides you can see; Pan Dora's Box. \nIt appears there are only two ways into this cabin. One through the front door for a full on attack, or you can try to dive through the window. It'll break and you may take damage, but you have the potion to heal you from any damage you take.")
+        b = choice("1 Kick in the door 2 Break through the window")
+        if b == '1':
+            onepotcabinkick()
+        else:
+            prnt("You take several steps away from the house to give yourself a running head start. With a potion in one hand and cursed blade in the other, you begin to sprint toward the cabin. \nCurssed Blade: This literally has to be one of the dumbest ideas you’ve ever had. \nOne pace away, you dive head first through the single pane, cabin window. Glass shatters and rains everyone, slicing you in several places. You quickly down the potion and activate your sword. \nA monkey wearing boots was hiding behind a chair. If you had used the door, it would have caught you by surprise. You’re able to avoid it as the monkey leaps toward you. \nPan Dora begins casting a spell, but you have plenty of time to get to her before she can complete it. In one swift slash, you kill the witch. \nThe monkey wearing boots escapes out the window as you make your way to the box. You collect Pan Dora’s Box and head back to the guild to report your success.")
+            win()
+def onepotcabinkick():
+    prnt("You kick the door with all your might and then charge into the small cabin. \nPan Dora the witch stands momentarily stunned by the fireplace. Just as you close the distance to the witch, a monkey jumps at you and begins biting at your sword arm. \nYou try to shake the monkey free, but it holds tight with its hand while it begins to kick you with its booted feet. Pan Dora begins to cast a spell. \nOn the table, there is a small box with magic rune work inscribed on the sides you can see; Pan Dora's Box. That box holds great magic, but Pan Dora is currently casting a spell. \nYou have time to either ditch the monkey and make your way to attack Pan Dora, knowing that she will likely blast you with whatever spell she’s charging up, or you could dodge her attack and dive to the side, but the monkey might get the better of you.")
+    b = choice("1 Charge 2 Dodge")
+    if b == '1':
+        prnt("You brace yourself for the pain, throw the monkey to the side and dive toward Pan Dora. \nShe finishes casting her spell and a wave of necrotic damage blasts you in the chest. You activate the magic properties of the sword and leap forward. Invisible blade in hand, you thrust forward, landing a deadly blow to the witch’s stomach. Pan Dora falls to the ground, dead. \nThe monkey in boots escapes through the front door. The damage to your chest is excruciating. You pull the last potion out of your pack and down the contents. A sigh of relief escapes your lips as the healing properties take affect. \nYou make your way toward the table to collect the box just as the monkey collects itself and escapes through the kicked in door. You collect Pan Dora’s Box and head back to the guild to report your success.")
+        win()
+    else:
+        prnt("You dive to the side, narrowly dodging the blast of energy that shoots from Pan Dora's hands. You land hard on your pack and hear the healing potion inside crunch and shatter. \nThe monkey wearing boots does not hesitate and begins to attack relentlessly. It bites and slaps at you. By the time you get your bearings, Pan Dora had charged a second bolt of energy. \nShe blasts you point blank in the head. \nThe world goes dark.")
+        theend()
 
 #Caster Trees
 def caster():
